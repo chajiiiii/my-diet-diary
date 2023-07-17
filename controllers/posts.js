@@ -10,4 +10,22 @@ async function index(req, res) {
   }
 }
 
-module.exports = { index };
+function newPost(req, res) {
+  res.render("posts/new", { errorMsg: "", title: "My Diet Diary" });
+}
+
+async function create(req, res) {
+  try {
+    await Post.create(req.body);
+    res.redirect("posts");
+  } catch (err) {
+    console.log(err);
+    res.render("posts/new", { errorMsg: err.message });
+  }
+}
+
+module.exports = {
+  index,
+  new: newPost,
+  create,
+};

@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+
+<form action="/posts" method="POST">
+  <label>Meal Date <input type="date" name="mealDate" /></label>
+  <label>
+    Meal Type
+    <select name="mealType">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+      <option value="snack">Snack</option>
+    </select>
+  </label>
+  <label>
+    Meal Time
+    <input type="time" name="mealTime" />
+  </label>
+  <label
+    >Weight
+    <input
+      type="number"
+      name="weight"
+      step="0.1"
+      min="0"
+      max="999.9"
+      pattern="\d+(\.\d{0,1})?"
+      placeholder="up to first decimal in kg"
+    />
+  </label>
+  <label
+    >Image URL:
+    <input type="text" name="photo" />
+  </label>
+  <input type="text" name="text" />
+  <button type="submit">Post</button>
+</form>
+
+<%- include("../partials/footer") %>
