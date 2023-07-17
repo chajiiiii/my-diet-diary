@@ -2,11 +2,24 @@
 <html>
   <head>
     <title><%= title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <nav>
+      <% if(user) { %>
+      <a href="/posts">Diary</a>
+      <a href="/logout">LOG OUT</a>
+      <% } else { %>
+      <a href="/auth/google" class="login">LOG IN</a>
+      <% } %>
+    </nav>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <a href="/posts">LOG IN</a>
   </body>
 </html>
