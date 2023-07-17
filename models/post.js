@@ -7,7 +7,7 @@ const postSchema = new Schema({
   mealTime: String,
   weight: Number,
   text: String,
-  //   photo:
+  photo: String,
 });
 
 module.exports = mongoose.model("Post", postSchema);

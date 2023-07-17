@@ -1,0 +1,87 @@
+* {
+  font-family: "Signika Negative", sans-serif;
+}
+
+:root {
+  --white: #ffffff;
+  /* 
+  --black: #000000;
+  --green: #008000;
+  --light-green: #05d205;
+  --red: #ca0000;
+  --light-red: #ff1010;
+  --yellow: #d5d500;
+  --light-yellow: #ffff2a;
+  --blue: #0005c9;
+  --light-blue: #0537ff; */
+  --grey: #969696;
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background-color: antiquewhite;
+    height: 100vh;
+    max-height: 100%;
+  }
+
+  header {
+    background-color: bisque;
+    display: block;
+    text-align: center;
+  }
+
+  nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+  }
+
+  h1 {
+    margin: 0;
+    padding: 0.3rem 0;
+    font-family: "Sigmar", cursive;
+  }
+
+  .menu-lists {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: var(--white);
+  }
+
+  .menu-list {
+    width: 24%;
+    display: inline-block;
+    list-style: none;
+  }
+
+  .menu-list > a {
+    display: block;
+    margin: 0.5rem 0.8rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--grey);
+  }
+
+  .menu-list > a > i {
+    display: block;
+  }
+
+  .nav-toggle {
+    display: none;
+    position: absolute;
+    font-size: 1.3rem;
+    right: 5.6rem;
+    top: 1.3rem;
+  }
+
+  /* .menu-lists.active {
+    display: block;
+  } */
+}

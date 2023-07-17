@@ -3,13 +3,12 @@
   /* border: solid 1px grey; */
 }
 
-@media screen and (min-width: 420px) {
+@media screen and (max-width: 425px) {
   html {
     height: 100%;
   }
 
   body {
-    /* display: flex; */
     background-color: antiquewhite;
     height: 100vh;
     max-height: 100%;
@@ -17,7 +16,7 @@
 
   nav {
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     height: 5vh;
     display: flex;
     justify-content: center;
@@ -35,15 +34,14 @@
     justify-content: center;
     align-items: center;
     height: 10vh;
-    font-size: 5rem;
+    font-size: 3rem;
     margin-top: 20rem;
-
     font-family: "Sigmar", cursive;
   }
 
   main {
     text-align: center;
-    font-size: 3rem;
+    font-size: 1.5rem;
     font-weight: 800;
   }
 }

@@ -1,1 +1,23 @@
-<h1>hehe</h1>
+<%- include("../partials/header") %>
+
+<section class="posts">
+  <% posts.forEach(function(post) { %>
+  <div class="post">
+    <p><%= post.mealDate.toLocaleDateString() %></p>
+    <p><%= post.mealType %></p>
+    <a href="#" class="post-toggle"
+      ><i class="fa-solid fa-bars" style="color: #000000"></i
+    ></a>
+    <ul class="post-edit-list">
+      <li><a href="#">Edit</a></li>
+      <li><a href="#">Delete</a></li>
+    </ul>
+    <img src="<%= post.photo %>" alt="" />
+    <p>Meal Time: <%= post.mealTime.substring(0, 5) %></p>
+    <p>Weight: <%= post.weight %>kg</p>
+    <p><%= post.text %></p>
+  </div>
+  <% }) %>
+</section>
+
+<%- include("../partials/footer") %>

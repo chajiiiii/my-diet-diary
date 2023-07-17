@@ -3,7 +3,7 @@ const Post = require("../models/post");
 async function index(req, res) {
   try {
     const posts = await Post.find({});
-    res.render("posts/index", { posts });
+    res.render("posts/index", { posts, title: "My Diet Diary" });
   } catch (err) {
     console.log(err);
     res.redirect("posts");
