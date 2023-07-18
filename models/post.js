@@ -8,6 +8,10 @@ const postSchema = new Schema({
   weight: Number,
   text: String,
   photo: String,
+  profile: {
+    type: Schema.Types.ObjectId,
+    ref: "Profile",
+  },
 });
 
 module.exports = mongoose.model("Post", postSchema);

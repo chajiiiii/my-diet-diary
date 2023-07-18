@@ -52,7 +52,7 @@ async function deletePost(req, res) {
   const postId = req.params.id;
 
   try {
-    const deletedPost = await Post.deleteOne({ _id: postId });
+    await Post.deleteOne({ _id: postId });
   } catch (err) {
     console.log(err);
   }

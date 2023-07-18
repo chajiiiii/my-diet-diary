@@ -1,0 +1,14 @@
+<%- include("../partials/header") %>
+
+<h1>User Profile</h1>
+<h2>Welcome <%= user.name %></h2>
+<img src="<%= user.avatar %>" alt="User Avatar" />
+
+<% if (profile) { %>
+<h3>Profile Information</h3>
+<p>Username: <%= profile.userName %></p>
+<p>Google ID: <%= profile.googleId %></p>
+<p>Avatar: <img src="<%= profile.avatar %>" alt="Profile Avatar" /></p>
+<% } else { %>
+<p>No profile found.</p>
+<% } %> <%- include("../partials/footer") %>
