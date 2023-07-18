@@ -1,0 +1,28 @@
+<%- include("../partials/header") %>
+
+<h2>User Profile Edit</h2>
+
+<form action="/profile/<%= profile.id %>?_method=PUT" method="POST">
+  <label
+    >Username:
+    <input type="text" name="userName" value="<%= profile.userName %>" />
+  </label>
+
+  <label
+    >Avatar URL:
+    <input type="text" name="avatar" value="<%= profile.avatar %>" /><img
+      src="<%= profile.avatar %>"
+      alt="Profile Avatar"
+    />
+  </label>
+
+  <label
+    >Bio
+    <textarea name="bio" cols="30" rows="10"><%= profile.bio %></textarea>
+  </label>
+
+  <button type="submit">Save</button>
+  <button type="button" onclick="discardChanges()">Discard</button>
+</form>
+
+<%- include("../partials/footer") %>

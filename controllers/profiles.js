@@ -1,5 +1,5 @@
 const Profile = require("../models/profile");
-const User = require("../models/user");
+// const User = require("../models/user");
 
 async function index(req, res) {
   try {
@@ -32,7 +32,31 @@ async function index(req, res) {
   }
 }
 
-module.exports = { index };
+async function edit(req, res) {
+  try {
+    const profile = await Profile.findById(req.params.id);
+    res.render("profile/edit", { profile, title: "My Diet Diary" });
+  } catch (err) {
+    console.log(err);
+    res.redirect("/profile/index");
+  }
+}
+
+async function update(req, res) {
+  try {
+    const profileId = req.params.id;
+    const updatedData = req.body;
+
+    let profile = await Profile.findById(profileId);
+    Object.assign(profile, updatedData);
+    await profile.save();
+  } catch (err) {
+    console.log(err);
+  }
+  res.redirect("/profile/index");
+}
+
+module.exports = { index, edit, update };
 
 // async function show(req, res) {
 //   const postId = req.params.id;
