@@ -48,10 +48,23 @@ async function update(req, res) {
   res.redirect("/posts");
 }
 
+async function deletePost(req, res) {
+  const postId = req.params.id;
+
+  try {
+    const deletedPost = await Post.deleteOne({ _id: postId });
+  } catch (err) {
+    console.log(err);
+  }
+
+  res.redirect("/posts");
+}
+
 module.exports = {
   index,
   new: newPost,
   create,
   edit,
   update,
+  delete: deletePost,
 };

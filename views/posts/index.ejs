@@ -5,10 +5,12 @@
   <div class="post">
     <p><%= post.mealDate.toLocaleDateString() %></p>
     <p><%= post.mealType %></p>
-    <ul class="post-edit-list">
-      <li><a href="/posts/<%= post.id %>/edit">Edit</a></li>
-      <li><a href="#">Delete</a></li>
-    </ul>
+    <a href="/posts/<%= post.id %>/edit">Edit</a>
+    <form action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+      <button type="submit" onclick="return confirm('Delete this post?')">
+        Delete
+      </button>
+    </form>
     <img src="<%= post.photo %>" alt="" />
     <p>Meal Time: <%= post.mealTime.substring(0, 5) %></p>
     <p>Weight: <%= post.weight %>kg</p>
