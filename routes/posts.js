@@ -9,4 +9,8 @@ router.get("/new", postsCtrl.new);
 
 router.post("/", postsCtrl.create);
 
+router.get("/:id/edit", postsCtrl.edit);
+
+router.put("/:id", postsCtrl.update);
+
 module.exports = router;

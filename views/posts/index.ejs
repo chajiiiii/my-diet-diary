@@ -1,15 +1,12 @@
-<%- include("../partials/header") %>
+<% if(user) { %> <%- include("../partials/header") %>
 
 <section class="posts">
   <% posts.forEach(function(post) { %>
   <div class="post">
     <p><%= post.mealDate.toLocaleDateString() %></p>
     <p><%= post.mealType %></p>
-    <a href="#" class="post-toggle"
-      ><i class="fa-solid fa-bars" style="color: #000000"></i
-    ></a>
     <ul class="post-edit-list">
-      <li><a href="#">Edit</a></li>
+      <li><a href="/posts/<%= post.id %>/edit">Edit</a></li>
       <li><a href="#">Delete</a></li>
     </ul>
     <img src="<%= post.photo %>" alt="" />
@@ -20,4 +17,5 @@
   <% }) %>
 </section>
 
-<%- include("../partials/footer") %>
+<%- include("../partials/footer") %> <% } else { %> <%- include("../index") %>
+<% } %>

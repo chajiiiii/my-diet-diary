@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+
+<form action="/posts/<%= post.id %>?_method=PUT" method="POST">
+  <div class="post-edit">
+    <input
+      type="date"
+      name="mealDate"
+      value="<%= post.mealDate.toISOString().substring(0, 10) %>"
+    />
+
+    <select name="mealType">
+      <option value="breakfast" <%= post.mealType === "breakfast" ? "selected" : "" %>>Breakfast</option>
+      <option value="lunch" <%= post.mealType === "lunch" ? "selected" : "" %>>Lunch</option>
+      <option value="dinner" <%= post.mealType === "dinner" ? "selected" : "" %>>Dinner</option>
+      <option value="snack" <%= post.mealType === "snack" ? "selected" : "" %>>Snack</option>
+      <%= post.mealType %>
+    </select>
+    
+    <input type="time" name="mealTime"value="<%= post.mealTime.substring(0, 5) %>" />
+
+    <label>Weight
+        <input 
+        type="number" 
+        name="weight" 
+        step="0.1"
+        min="0"
+        max="999.9"
+        pattern="\d+(\.\d{0,1})?" 
+        value="<%= post.weight %>" />
+    </label>
+
+    <img src="<%= post.photo %>" alt="" />
+    <label>Image URL<input type="text" name="photo" value="<%= post.photo %>"></label>
+
+
+    <textarea name="text"><%= post.text %></textarea>
+  </div>
+  <div class="edit-btns">
+    <button type="submit">Save</button>
+    <button type="button" onclick="discardChanges()">Discard</button>
+  </div>
+</form>
+
+<%- include("../partials/footer") %>
