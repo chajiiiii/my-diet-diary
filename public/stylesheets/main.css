@@ -1,6 +1,17 @@
 * {
-  font-family: "Signika Negative", sans-serif;
-  /* border: solid 1px grey; */
+  font-family: "Roboto Slab", serif;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --green: #a9e1ba;
+  --light-green: #d6eadf;
+  --blue: #b6ccfe;
+  --light-blue: #dfe7fd;
+  --yellow: #ffee93;
+  --light-yellow: #fcf6bd;
+  --grey: #969696;
 }
 
 @media screen and (max-width: 425px) {
@@ -9,24 +20,8 @@
   }
 
   body {
-    background-color: antiquewhite;
-    height: 100vh;
+    background-color: var(--light-green);
     max-height: 100%;
-  }
-
-  nav {
-    text-align: center;
-    font-size: 2rem;
-    height: 5vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0 1rem 0;
-  }
-
-  a {
-    color: grey;
-    text-decoration: none;
   }
 
   header {
@@ -35,13 +30,27 @@
     align-items: center;
     height: 10vh;
     font-size: 3rem;
-    margin-top: 20rem;
-    font-family: "Sigmar", cursive;
+    font-weight: 600;
+    padding-top: 20%;
+  }
+
+  nav {
+    text-align: center;
+    font-size: 1.3rem;
+    height: 5vh;
+    position: relative;
+    margin: 1rem 0;
+  }
+
+  a {
+    color: var(--grey);
+    text-decoration: none;
   }
 
   main {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 800;
+    padding: 1rem 0;
   }
 }
