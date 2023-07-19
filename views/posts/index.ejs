@@ -1,5 +1,4 @@
-<%- include("../partials/header") %>
-
+<%- include("../partials/header") %> <% if(posts && posts.length > 0) { %>
 <section class="posts">
   <% dateGroups.forEach(([date, posts]) => { %>
   <div class="post-date-board">
@@ -44,5 +43,6 @@
   </div>
   <% }) %>
 </section>
-
-<%- include("../partials/footer") %>
+<% } else { %>
+<h3>No Posts Yet</h3>
+<% } %> <%- include("../partials/footer") %>

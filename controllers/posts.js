@@ -42,6 +42,7 @@ async function index(req, res) {
     res.render("posts/index", {
       dateGroups: sortedDateGroups,
       title: "My Diet Diary",
+      posts,
     });
   } catch (err) {
     console.log(err);

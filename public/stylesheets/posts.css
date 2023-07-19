@@ -5,8 +5,8 @@
 :root {
   --white: #ffffff;
   --black: #000000;
-  --accent: #ffee93;
   --light-accent: #fcf6bd;
+  --mid-accent: #ffee93;
   --dark-accent: #ffdc5e;
   --green: #a9e1ba;
   --light-green: #d6eadf;
@@ -33,14 +33,14 @@
   }
 
   body {
-    background-color: var(--accent);
+    background-color: var(--white);
     margin: 0;
     height: 100vh;
     max-height: 100%;
   }
 
   header {
-    background-color: var(--light-accent);
+    background-color: var(--dark-accent);
     color: var(--black);
     display: flex;
     justify-content: center;
@@ -64,6 +64,16 @@
   h1 {
     margin: 0;
     padding: 0.3rem 0.5rem;
+  }
+
+  h3 {
+    background-color: var(--light-accent);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem;
+    border-radius: 20px;
   }
 
   .nav-lists {
@@ -108,7 +118,7 @@
   }
 
   .post-date-board {
-    background-color: var(--dark-accent);
+    background-color: var(--mid-accent);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -136,7 +146,7 @@
   }
 
   .post-meal-type {
-    background-color: var(--dark-accent);
+    background-color: var(--mid-accent);
     border-radius: 10px;
     width: 96%;
     text-align: center;
@@ -223,7 +233,7 @@
   .post-sub {
     display: flex;
     width: 96%;
-    background-color: var(--dark-accent);
+    background-color: var(--mid-accent);
     border-radius: 10px;
     margin-top: 0.3rem;
   }
