@@ -15,14 +15,13 @@
 }
 
 .post-bar-toggle-btn {
-  display: none
+  /* display: none; */
   position: absolute;
   align-items: center;
   font-size: 1.1rem;
   right: 3rem;
   padding-top: 0.75rem;
 }
-
 
 @media screen and (max-width: 425px) {
   html {
@@ -61,7 +60,7 @@
     padding: 0.3rem 0.5rem;
   }
 
-  .menu-lists {
+  .nav-lists {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -69,22 +68,22 @@
     background-color: var(--white);
   }
 
-  .menu-list {
+  .nav-list {
     width: 24%;
     display: inline-block;
     list-style: none;
   }
 
-  .menu-list > a {
+  .nav-list > a {
     display: block;
-    margin: 0.5rem 0.8rem;
+    margin: 0.5rem 0.5rem;
     text-align: center;
     text-decoration: none;
     color: var(--grey);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
-  .menu-list > a > i {
+  .nav-list > a > i {
     display: block;
   }
 
@@ -145,7 +144,7 @@
     position: absolute;
     top: 50%;
     right: 0.5rem;
-    transform: translate(160px, -150%);
+    transform: translate(140px, -150%);
     font-size: 1.1rem;
     z-index: 2;
   }
@@ -180,16 +179,14 @@
     font-size: 1rem;
   }
 
-  .post.edit-btn
-
-  .delete-form {
+  .post.edit-btn .delete-form {
     color: inherit;
     border: none;
     padding: 0;
     font: inherit;
     outline: inherit;
   }
-  
+
   .post-delete-btn {
     cursor: pointer;
     background: none;
@@ -199,7 +196,9 @@
   }
 
   .post-photo {
-    max-width: 20.5rem;
+    width: 92%;
+    max-width: 21rem;
+    max-height: 21rem;
     border-radius: 10px;
     display: block;
   }

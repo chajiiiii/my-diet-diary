@@ -2,7 +2,24 @@ const Post = require("../models/post");
 
 async function index(req, res) {
   try {
-    const posts = await Post.find({});
+    const mealTypeOrder = {
+      breakfast: 1,
+      lunch: 2,
+      dinner: 3,
+      snack: 4,
+    };
+
+    const posts = await Post.find({}).sort({
+      mealType: 1,
+    });
+
+    posts.sort((a, b) => {
+      const mealTypeA = a.mealType.toLowerCase();
+      const mealTypeB = b.mealType.toLowerCase();
+
+      return mealTypeOrder[mealTypeA] - mealTypeOrder[mealTypeB];
+    });
+
     res.render("posts/index", { posts, title: "My Diet Diary" });
   } catch (err) {
     console.log(err);
