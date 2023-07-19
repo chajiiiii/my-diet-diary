@@ -21,22 +21,25 @@
     <header>
       <h1><%= title %></h1>
     </header>
-    <nav>
+    <a href="#" class="side-nav-toggle-btn"
+      ><i class="fa-solid fa-bars" style="color: var(--black)"></i
+    ></a>
+    <nav class="nav-bar">
       <ul class="nav-lists">
         <li class="nav-list">
-          <a href="/posts"
+          <a href="/posts" class="nav-link"
             ><i class="fa-solid fa-book-open" style="color: var(--grey)"></i
             >Diary</a
           >
         </li>
         <li class="nav-list">
-          <a href="/posts/new"
+          <a href="/posts/new" class="nav-link"
             ><i class="fa-solid fa-pen-to-square" style="color: var(--grey)"></i
             >New Post</a
           >
         </li>
         <li class="nav-list">
-          <a href="/profile/index"
+          <a href="/profile/index" class="nav-link"
             ><i
               class="fa-solid fa-image-portrait"
               style="color: var(--grey)"
@@ -45,7 +48,7 @@
           >
         </li>
         <li class="nav-list">
-          <a href="/logout"
+          <a href="/logout" class="nav-link"
             ><i
               class="fa-solid fa-right-from-bracket"
               style="color: var(--grey)"

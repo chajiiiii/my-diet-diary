@@ -1,4 +1,5 @@
 const Post = require("../models/post");
+const Profile = require("../models/profile");
 
 async function index(req, res) {
   try {
@@ -39,10 +40,24 @@ async function index(req, res) {
       });
     });
 
+    const currentUser = req.user;
+
+    let profile = await Profile.findOne({ user: currentUser._id });
+
+    if (!profile) {
+      profile = await Profile.create({
+        userName: currentUser.name,
+        googleId: currentUser.googleId,
+        avatar: currentUser.avatar,
+        user: currentUser._id,
+      });
+    }
+
     res.render("posts/index", {
       dateGroups: sortedDateGroups,
       title: "My Diet Diary",
       posts,
+      profile: profile,
     });
   } catch (err) {
     console.log(err);

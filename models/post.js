@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  mealDate: { type: Date, required: true },
-  mealType: { type: String, required: true },
+  mealDate: { type: Date },
+  mealType: { type: String },
   mealTime: String,
   weight: Number,
   text: String,
