@@ -10,17 +10,39 @@ async function index(req, res) {
     };
 
     const posts = await Post.find({}).sort({
+      mealDate: -1,
       mealType: 1,
     });
 
-    posts.sort((a, b) => {
-      const mealTypeA = a.mealType.toLowerCase();
-      const mealTypeB = b.mealType.toLowerCase();
+    const dateGroups = {};
 
-      return mealTypeOrder[mealTypeA] - mealTypeOrder[mealTypeB];
+    posts.forEach((post) => {
+      const dateKey = post.mealDate.toDateString();
+
+      if (!dateGroups[dateKey]) {
+        dateGroups[dateKey] = [];
+      }
+
+      dateGroups[dateKey].push(post);
     });
 
-    res.render("posts/index", { posts, title: "My Diet Diary" });
+    const sortedDateGroups = Object.entries(dateGroups).sort(
+      ([dateA], [dateB]) => new Date(dateB) - new Date(dateA)
+    );
+
+    sortedDateGroups.forEach(([date, posts]) => {
+      posts.sort((a, b) => {
+        const mealTypeA = a.mealType.toLowerCase();
+        const mealTypeB = b.mealType.toLowerCase();
+
+        return mealTypeOrder[mealTypeA] - mealTypeOrder[mealTypeB];
+      });
+    });
+
+    res.render("posts/index", {
+      dateGroups: sortedDateGroups,
+      title: "My Diet Diary",
+    });
   } catch (err) {
     console.log(err);
     res.redirect("posts");

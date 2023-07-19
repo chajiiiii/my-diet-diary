@@ -5,12 +5,16 @@
 :root {
   --white: #ffffff;
   --black: #000000;
+  --accent: #ffee93;
+  --light-accent: #fcf6bd;
+  --dark-accent: #ffdc5e;
   --green: #a9e1ba;
   --light-green: #d6eadf;
   --blue: #b6ccfe;
   --light-blue: #dfe7fd;
   --yellow: #ffee93;
   --light-yellow: #fcf6bd;
+  --dark-yellow: #ffdc5e;
   --grey: #969696;
 }
 
@@ -29,19 +33,21 @@
   }
 
   body {
+    background-color: var(--accent);
     margin: 0;
-    background-color: var(--light-green);
     height: 100vh;
     max-height: 100%;
   }
 
   header {
-    background-color: var(--light-green);
-    display: block;
-    text-align: left;
-    font-size: 0.7rem;
-    padding: 0.3rem;
+    background-color: var(--light-accent);
     color: var(--black);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.3rem;
+    font-size: 0.7rem;
   }
 
   section {
@@ -101,11 +107,22 @@
     align-items: center;
   }
 
+  .post-date-board {
+    background-color: var(--dark-accent);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0.7rem 0;
+  }
+
   .post {
     background-color: var(--white);
     border-radius: 10px;
-    width: 90%;
-    margin: 0.4rem 0;
+    width: 97%;
+    margin-bottom: 0.5rem;
+    padding-top: 0.2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -114,18 +131,18 @@
   }
 
   .post-date {
-    margin: 1rem;
-    font-size: ;
+    margin: 0.5rem;
+    font-size: 1.2rem;
   }
 
   .post-meal-type {
-    background-color: var(--green);
+    background-color: var(--dark-accent);
     border-radius: 10px;
-    width: 92%;
+    width: 96%;
     text-align: center;
     margin: 0.3rem 0;
-    padding: 0.5rem 0;
-    font-size: 1.5rem;
+    padding: 0.3rem 0;
+    font-size: 1.3rem;
     display: inline;
     position: relative;
     z-index: 1;
@@ -144,7 +161,7 @@
     position: absolute;
     top: 50%;
     right: 0.5rem;
-    transform: translate(140px, -150%);
+    transform: translate(140px, -137%);
     font-size: 1.1rem;
     z-index: 2;
   }
@@ -196,8 +213,8 @@
   }
 
   .post-photo {
-    width: 92%;
-    max-width: 21rem;
+    width: 96%;
+    max-width: 22rem;
     max-height: 21rem;
     border-radius: 10px;
     display: block;
@@ -205,8 +222,8 @@
 
   .post-sub {
     display: flex;
-    width: 92%;
-    background-color: var(--green);
+    width: 96%;
+    background-color: var(--dark-accent);
     border-radius: 10px;
     margin-top: 0.3rem;
   }

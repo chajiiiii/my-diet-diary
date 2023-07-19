@@ -1,42 +1,46 @@
 <%- include("../partials/header") %>
 
 <section class="posts">
-  <% posts.forEach(function(post) { %>
-  <div class="post">
-    <p class="post-date"><%= post.mealDate.toLocaleDateString() %></p>
+  <% dateGroups.forEach(([date, posts]) => { %>
+  <div class="post-date-board">
+    <h3 class="post-date"><%= date %></h3>
 
-    <p class="post-meal-type"><%= post.mealType %></p>
+    <% posts.forEach(function(post) { %>
+    <div class="post">
+      <p class="post-meal-type"><%= post.mealType %></p>
 
-    <div class="post-bar-toggle">
-      <a href="#" class="post-bar-toggle-btn"
-        ><i class="fa-solid fa-bars" style="color: var(--white)"></i
-      ></a>
-      <div class="post-bar-list">
-        <a href="/posts/<%= post.id %>/edit" class="post-edit-btn">Edit</a>
-        <form
-          class="delete-form"
-          action="/posts/<%= post.id %>?_method=DELETE"
-          method="POST"
-        >
-          <button
-            type="submit"
-            class="post-delete-btn"
-            onclick="return confirm('Delete this post?')"
+      <div class="post-bar-toggle">
+        <a href="#" class="post-bar-toggle-btn"
+          ><i class="fa-solid fa-bars" style="color: var(--white)"></i
+        ></a>
+        <div class="post-bar-list">
+          <a href="/posts/<%= post.id %>/edit" class="post-edit-btn">Edit</a>
+          <form
+            class="delete-form"
+            action="/posts/<%= post.id %>?_method=DELETE"
+            method="POST"
           >
-            Delete
-          </button>
-        </form>
+            <button
+              type="submit"
+              class="post-delete-btn"
+              onclick="return confirm('Delete this post?')"
+            >
+              Delete
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
 
-    <img src="<%= post.photo %>" class="post-photo" />
-    <div class="post-sub">
-      <p class="post-meal-time">
-        Meal Time: <%= post.mealTime.substring(0, 5) %>
-      </p>
-      <p class="post-weight">Weight: <%= post.weight %>kg</p>
+      <img src="<%= post.photo %>" class="post-photo" />
+      <div class="post-sub">
+        <p class="post-meal-time">
+          Meal Time: <%= post.mealTime.substring(0, 5) %>
+        </p>
+        <p class="post-weight">Weight: <%= post.weight %>kg</p>
+      </div>
+      <p class="post-text"><%= post.text %></p>
     </div>
-    <p class="post-text"><%= post.text %></p>
+    <% }) %>
   </div>
   <% }) %>
 </section>
