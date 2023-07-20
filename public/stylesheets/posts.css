@@ -18,15 +18,6 @@
   --grey: #969696;
   --light-grey: #cccccc;
 }
-/* 
-.post-bar-toggle-btn {
-  display: none;
-  position: absolute;
-  align-items: center;
-  font-size: 1.1rem;
-  right: 3rem;
-  padding-top: 0.75rem;
-} */
 
 @media (min-width: 1025px) {
   html {

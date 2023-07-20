@@ -1,28 +1,47 @@
 <%- include("../partials/header") %>
 
-<h2>User Profile Edit</h2>
+<form
+  action="/profile/<%= profile.id %>?_method=PUT"
+  method="POST"
+  class="profile-edit-form"
+>
+  <img src="<%= profile.avatar %>" class="profile-edit-avatar" />
 
-<form action="/profile/<%= profile.id %>?_method=PUT" method="POST">
-  <label
-    >Username:
-    <input type="text" name="userName" value="<%= profile.userName %>" />
-  </label>
-
-  <label
-    >Avatar URL:
-    <input type="text" name="avatar" value="<%= profile.avatar %>" /><img
-      src="<%= profile.avatar %>"
-      alt="Profile Avatar"
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Username</span>
+    <input
+      type="text"
+      name="userName"
+      class="form-control"
+      value="<%= profile.userName %>"
     />
-  </label>
+  </div>
 
-  <label
-    >Bio
-    <textarea name="bio" cols="30" rows="10"><%= profile.bio %></textarea>
-  </label>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">Image URL</span>
+    <input
+      type="text"
+      name="avatar"
+      class="form-control"
+      value="<%= profile.avatar %>"
+    />
+  </div>
 
-  <button type="submit">Save</button>
-  <button type="button" onclick="discardChanges()">Discard</button>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">Bio</span>
+    <textarea name="bio" class="form-control"><%= profile.bio %></textarea>
+  </div>
+
+  <div class="profile-edit-btns">
+    <button type="submit" class="btn btn-warning submit-btn">Save</button>
+    <button
+      type="button"
+      onclick="discardChanges()"
+      class="btn btn-warning discard-btn"
+    >
+      Discard
+    </button>
+  </div>
 </form>
 
 <%- include("../partials/footer") %>
