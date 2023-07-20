@@ -4,14 +4,31 @@
   --light-accent: #fcf6bd;
   --mid-accent: #ffee93;
   --dark-accent: #ffdc5e;
-  --green: #a9e1ba;
-  --light-green: #d6eadf;
-  --blue: #b6ccfe;
-  --light-blue: #dfe7fd;
-  --yellow: #ffee93;
-  --light-yellow: #fcf6bd;
-  --dark-yellow: #ffdc5e;
   --grey: #969696;
+}
+
+.my-profile,
+.edit-my-profile,
+.edit-post-page {
+  text-align: center;
+  position: relative;
+  top: 10%;
+  text-decoration: underline var(--dark-accent);
+}
+
+/* ------------------ New Post Page ------------------*/
+
+.posts-header {
+  background-color: var(--dark-accent);
+  color: var(--black);
+  display: flex;
+  position: fixed;
+  top: 0;
+  margin: 0 auto;
+  padding: 0.3rem;
+  font-size: 1rem;
+  width: 100%;
+  z-index: 4;
 }
 
 .new-post-body-tag {
@@ -41,17 +58,37 @@
   margin: 1rem;
 }
 
+/* ------------------ Post Edit Page ------------------*/
+
+.edit-post-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10rem auto;
+  height: 50%;
+  width: 50%;
+}
+
+.edit-post-img > img {
+  min-width: 150px;
+  max-width: 240px;
+  min-height: 150px;
+  max-height: 150px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.no-img {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
 /* ------------------ Profile Page ------------------*/
 
 .profile-body-tag {
   background-color: var(--white);
-}
-
-.my-profile {
-  text-align: center;
-  position: relative;
-  top: 10%;
-  text-decoration: underline var(--dark-accent);
 }
 
 .profile {
@@ -118,6 +155,10 @@
   color: var(--black);
 }
 
+.profile-edit-btn:hover {
+  color: var(--black);
+}
+
 /* ------------------ Profile Edit Page ------------------*/
 
 .profile-edit-form {
@@ -125,7 +166,7 @@
   border: solid 5px var(--dark-accent);
   border-radius: 10px;
   width: 17rem;
-  margin: 3rem auto;
+  margin: 10rem auto 10rem auto;
   padding: 1rem;
   display: flex;
   flex-direction: column;

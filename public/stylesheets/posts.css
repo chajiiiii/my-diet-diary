@@ -8,13 +8,6 @@
   --light-accent: #fcf6bd;
   --mid-accent: #ffee93;
   --dark-accent: #ffdc5e;
-  --green: #a9e1ba;
-  --light-green: #d6eadf;
-  --blue: #b6ccfe;
-  --light-blue: #dfe7fd;
-  --yellow: #ffee93;
-  --light-yellow: #fcf6bd;
-  --dark-yellow: #ffdc5e;
   --grey: #969696;
   --light-grey: #cccccc;
 }
@@ -297,7 +290,7 @@ body {
   }
 
   section.post-profile {
-    background-color: var(--dark-accent);
+    background-color: var(--mid-accent);
     border-radius: 10px;
     width: 17rem;
     margin: 6.7rem 2.5rem 0.5rem 2.5rem;
@@ -344,7 +337,7 @@ body {
   }
 
   .side-new-post-btn {
-    background-color: var(--dark-accent);
+    background-color: var(--mid-accent);
     border-radius: 10px;
     width: 17rem;
     margin: 27rem 2.5rem;
