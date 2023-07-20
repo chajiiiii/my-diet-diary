@@ -74,8 +74,7 @@ async function create(req, res) {
     await Post.create(req.body);
     res.redirect("posts");
   } catch (err) {
-    console.log(err);
-    res.render("posts/new", { errorMsg: err.message });
+    res.render("posts/new", { errorMsg: err.message, title: "My Diet Diary" });
   }
 }
 
