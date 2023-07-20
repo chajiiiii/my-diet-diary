@@ -2,6 +2,8 @@ const Post = require("../models/post");
 const Profile = require("../models/profile");
 
 async function index(req, res) {
+  const currentUser = req.user;
+
   try {
     const mealTypeOrder = {
       breakfast: 1,
@@ -10,7 +12,7 @@ async function index(req, res) {
       snack: 4,
     };
 
-    const posts = await Post.find({}).sort({
+    const posts = await Post.find({ user: currentUser._id }).sort({
       mealDate: -1,
       mealType: 1,
     });
@@ -39,8 +41,6 @@ async function index(req, res) {
         return mealTypeOrder[mealTypeA] - mealTypeOrder[mealTypeB];
       });
     });
-
-    const currentUser = req.user;
 
     let profile = await Profile.findOne({ user: currentUser._id });
 

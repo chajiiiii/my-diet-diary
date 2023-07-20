@@ -532,7 +532,7 @@ body {
   }
 
   .nav-list-bottom {
-    width: 24%;
+    width: 18%;
     display: inline-block;
   }
 
@@ -597,7 +597,7 @@ body {
   }
 
   .nav-list-bottom {
-    width: 24%;
+    width: 18%;
     display: inline-block;
     list-style: none;
   }
@@ -608,7 +608,7 @@ body {
     text-align: center;
     text-decoration: none;
     color: var(--grey);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 
   .nav-list-bottom > a > i {

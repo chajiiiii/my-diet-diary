@@ -1,7 +1,8 @@
-<%- include("../partials/header") %> <% if(posts && posts.length > 0) { %>
+<%- include("../partials/header") %>
 <a href="#" class="side-nav-toggle-btn"
   ><i class="fa-solid fa-bars" style="color: var(--black)"></i
 ></a>
+<% if(posts && posts.length > 0) { %>
 <div class="row">
   <section class="post-profile">
     <div class="post-profile-img">
@@ -17,6 +18,7 @@
   <div>
     <a href="/posts/new" class="side-new-post-btn">New Post</a>
   </div>
+
   <section class="posts">
     <% dateGroups.forEach(([date, posts]) => { %>
     <div class="post-date-board">
@@ -64,6 +66,4 @@
 </div>
 <% } else { %>
 <h3 class="no-post">No Posts Yet</h3>
-<% } %>
-
-<%- include("../partials/footer") %>
+<% } %> <%- include("../partials/footer") %>
