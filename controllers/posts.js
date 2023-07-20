@@ -2,8 +2,6 @@ const Post = require("../models/post");
 const Profile = require("../models/profile");
 
 async function index(req, res) {
-  const currentUser = req.user;
-
   try {
     const mealTypeOrder = {
       breakfast: 1,
@@ -12,7 +10,20 @@ async function index(req, res) {
       snack: 4,
     };
 
-    const posts = await Post.find({ user: currentUser._id }).sort({
+    const currentUser = req.user;
+
+    let profile = await Profile.findOne({ user: currentUser._id });
+
+    if (!profile) {
+      profile = await Profile.create({
+        userName: currentUser.name,
+        googleId: currentUser.googleId,
+        avatar: currentUser.avatar,
+        user: currentUser._id,
+      });
+    }
+
+    const posts = await Post.find({ profile: profile._id }).sort({
       mealDate: -1,
       mealType: 1,
     });
@@ -42,17 +53,6 @@ async function index(req, res) {
       });
     });
 
-    let profile = await Profile.findOne({ user: currentUser._id });
-
-    if (!profile) {
-      profile = await Profile.create({
-        userName: currentUser.name,
-        googleId: currentUser.googleId,
-        avatar: currentUser.avatar,
-        user: currentUser._id,
-      });
-    }
-
     res.render("posts/index", {
       dateGroups: sortedDateGroups,
       title: "My Diet Diary",
@@ -71,7 +71,19 @@ function newPost(req, res) {
 
 async function create(req, res) {
   try {
-    await Post.create(req.body);
+    const userProfileId = req.user._id;
+    let profile = await Profile.findOne({ user: userProfileId });
+    console.log(`User profile!!! ${profile}`);
+
+    await Post.create({
+      mealDate: req.body.mealDate,
+      mealType: req.body.mealType,
+      mealTime: req.body.mealTime,
+      weight: req.body.weight,
+      text: req.body.text,
+      photo: req.body.photo,
+      profile: profile._id,
+    });
     res.redirect("posts");
   } catch (err) {
     res.render("posts/new", { errorMsg: err.message, title: "My Diet Diary" });
