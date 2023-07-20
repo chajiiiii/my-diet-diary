@@ -10,10 +10,10 @@ postToggleBtns.forEach(function (toggleBtn) {
 });
 
 const navToggleBtn = document.querySelector(".side-nav-toggle-btn");
-const navLists = document.querySelector(".nav-lists");
+const navListsSide = document.querySelector(".nav-lists-side");
 
 navToggleBtn.addEventListener("click", function (event) {
-  navLists.classList.toggle("active");
+  navListsSide.classList.toggle("active");
 });
 
 function discardChanges() {

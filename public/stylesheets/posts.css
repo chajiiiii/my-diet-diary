@@ -19,29 +19,181 @@
   --light-grey: #cccccc;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--white);
+  margin: 0;
+  height: 100vh;
+  max-height: 100%;
+}
+
+.posts-header {
+  background-color: var(--dark-accent);
+  color: var(--black);
+  display: flex;
+  position: fixed;
+  margin: 0 auto;
+  padding: 0.3rem;
+  font-size: 1rem;
+  width: 100%;
+  z-index: 4;
+}
+
+.no-post {
+  background-color: var(--light-accent);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-date-board {
+  background-color: var(--dark-accent);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0.7rem 0;
+  box-shadow: 0px 2px 6px 0px var(--grey);
+}
+
+.post {
+  background-color: var(--white);
+  border-radius: 10px;
+  width: 97%;
+  margin-bottom: 0.5rem;
+  padding-top: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0px 2px 6px 0px var(--grey);
+}
+
+.post-date {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.post-meal-type {
+  background-color: var(--mid-accent);
+  border-radius: 10px;
+  width: 97%;
+  text-align: center;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0;
+  font-size: 1.3rem;
+  display: inline;
+  position: relative;
+  z-index: 1;
+}
+
+.toggle-div {
+  display: flex;
+}
+
+.post-bar-toggle {
+  position: relative;
+  display: inline-block;
+}
+
+.post-bar-toggle-btn {
+  position: absolute;
+  z-index: 2;
+}
+
+.post-bar-list {
+  display: none;
+  position: absolute;
+  background-color: var(--white);
+  min-width: 2rem;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px var(--grey);
+  right: 100%;
+  top: 0;
+  margin: -0.5rem -11rem 0 0;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.post-bar-list.active {
+  display: block;
+}
+
+.post-edit-btn,
+.post-delete-btn {
+  color: var(--black);
+  padding: 0;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.post.edit-btn .delete-form {
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+
+.post-delete-btn {
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-decoration: none;
+  display: block;
+}
+
+.post-photo {
+  border-radius: 10px;
+  display: block;
+  padding: 0.2rem 0;
+}
+
+.post-sub {
+  display: flex;
+  background-color: var(--mid-accent);
+  border-radius: 10px;
+  margin-top: 0.3rem;
+}
+
+.post-meal-time,
+.post-weight {
+  text-align: center;
+  width: 50%;
+  margin: 0.5rem 0;
+}
+
+.post-text {
+  white-space: pre-line;
+  width: 90%;
+  padding: 0.5rem 0;
+  margin: 1rem auto;
+}
+
+/* ---------------------------------------------- */
+
 @media (min-width: 1025px) {
-  html {
-    height: 100%;
-  }
-
-  body {
-    background-color: var(--white);
-    margin: 0;
-    height: 100vh;
-    max-height: 100%;
-  }
-
-  header {
-    background-color: var(--dark-accent);
-    color: var(--black);
-    display: flex;
-    position: fixed;
+  .posts-header {
     text-align: left;
-    margin: 0 auto;
-    padding: 0.3rem;
-    font-size: 1rem;
-    width: 100%;
-    z-index: 4;
   }
 
   h1 {
@@ -66,9 +218,86 @@
     right: 15%;
   }
 
+  .post-bar-toggle-btn {
+    top: -2.2rem;
+    right: -12rem;
+    font-size: 1.2rem;
+  }
+
+  .post-photo {
+    width: 96%;
+    max-width: 25rem;
+    max-height: 22rem;
+    border-radius: 10px;
+    display: block;
+    padding: 0.2rem 0;
+  }
+
+  .post-sub {
+    width: 97%;
+  }
+
+  .side-nav-toggle-btn {
+    position: fixed;
+    font-size: 1.5rem;
+    z-index: 5;
+    top: 0.9rem;
+    right: 1.3rem;
+  }
+
+  .nav-side {
+    position: fixed;
+    z-index: 4;
+    flex-direction: column;
+    display: flex;
+    right: 0;
+    width: 20%;
+    height: 100%;
+  }
+
+  .nav-lists-side {
+    display: none;
+    margin: 0;
+    height: 100%;
+    flex-direction: column;
+    background-color: var(--white);
+    box-shadow: 0px 0px 13px var(--grey);
+    padding: 5rem 0 0 0;
+    align-items: center;
+  }
+
+  .nav-list-side {
+    display: flex;
+    list-style: none;
+    height: 5%;
+    width: 90%;
+    align-items: center;
+  }
+
+  .nav-list-side > a {
+    display: flex;
+    text-decoration: none;
+    color: var(--grey);
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    padding: 0.5rem;
+  }
+
+  .nav-lists-side.active,
+  .nav-link.active {
+    display: flex;
+  }
+
+  .nav-list-side > a:hover {
+    text-decoration: underline var(--dark-accent);
+  }
+
+  .nav-list-side > a > i {
+    display: none;
+  }
+
   section.post-profile {
     background-color: var(--dark-accent);
-    /* border: solid 10px var(--dark-accent); */
     border-radius: 10px;
     width: 17rem;
     margin: 6.7rem 2.5rem 0.5rem 2.5rem;
@@ -78,7 +307,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* box-shadow: 1px 2px 6px 0px var(--grey); */
+    box-shadow: 0px 2px 6px 0px var(--grey);
   }
 
   .post-profile-img > img {
@@ -118,255 +347,31 @@
     background-color: var(--dark-accent);
     border-radius: 10px;
     width: 17rem;
-    height: 2rem;
     margin: 27rem 2.5rem;
     padding: 1rem 0;
     position: fixed;
     right: 63%;
-    /* top: 50%; */
     text-align: center;
     text-decoration: none;
     color: var(--black);
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 3px;
+    box-shadow: 0px 2px 6px 0px var(--grey);
   }
 
-  .no-post {
-    background-color: var(--light-accent);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    border-radius: 20px;
-  }
-
-  .side-nav-toggle-btn {
-    position: fixed;
-    font-size: 1.5rem;
-    z-index: 5;
-    top: 0.9rem;
-    right: 1.3rem;
-  }
-
-  nav {
-    position: fixed;
-    z-index: 4;
-    flex-direction: column;
-    display: flex;
-    right: 0;
-    width: 20%;
-    height: 100%;
-  }
-
-  .nav-lists {
-    display: none;
-    margin: 0;
-    height: 100%;
-    flex-direction: column;
-    background-color: var(--white);
-    box-shadow: 0px 0px 13px var(--grey);
-    padding: 5rem 0 0 0;
-    align-items: center;
-  }
-
-  .nav-list {
-    display: flex;
-    list-style: none;
-    height: 5%;
-    width: 90%;
-    align-items: center;
-  }
-
-  .nav-list > a {
-    display: flex;
-    text-decoration: none;
-    color: var(--grey);
-    font-size: 1.1rem;
-    margin-left: 1rem;
-    padding: 0.5rem;
-  }
-
-  .nav-lists.active,
-  .nav-link.active {
-    display: flex;
-  }
-
-  .nav-list > a:hover {
-    text-decoration: underline var(--dark-accent);
-  }
-
-  .nav-list > a > i {
-    display: none;
-  }
-
-  .posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .post-date-board {
-    background-color: var(--dark-accent);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 0.7rem 0;
-  }
-
-  .post {
-    background-color: var(--white);
-    border-radius: 10px;
-    width: 97%;
-    margin-bottom: 0.5rem;
-    padding-top: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .post-date {
-    margin: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .post-meal-type {
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    width: 97%;
-    text-align: center;
-    margin: 0.3rem 0;
-    padding: 0.3rem 0;
-    font-size: 1.3rem;
-    display: inline;
-    position: relative;
-    z-index: 1;
-  }
-
-  .toggle-div {
-    display: flex;
-  }
-
-  .post-bar-toggle {
-    position: relative;
-    display: inline-block;
-  }
-
-  .post-bar-toggle-btn {
-    position: absolute;
-    top: -2.2rem;
-    right: -12rem;
-    z-index: 2;
-    font-size: 1.2rem;
-  }
-
-  .post-bar-list {
-    display: none;
-    position: absolute;
-    background-color: var(--white);
-    min-width: 2rem;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px var(--grey);
-    right: 100%;
-    top: 0;
-    margin: -0.5rem -11rem 0 0;
-    z-index: 1;
-    border-radius: 5px;
-  }
-
-  .post-bar-list.active {
-    display: block;
-  }
-
-  .post-edit-btn,
-  .post-delete-btn {
+  .post-profile-edit-btn:hover,
+  .side-new-post-btn:hover {
     color: var(--black);
-    padding: 0;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .post.edit-btn .delete-form {
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    outline: inherit;
-  }
-
-  .post-delete-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    text-decoration: none;
-    display: block;
-  }
-
-  .post-photo {
-    width: 96%;
-    max-width: 25rem;
-    max-height: 22rem;
-    border-radius: 10px;
-    display: block;
-    padding: 0.2rem 0;
-  }
-
-  .post-sub {
-    display: flex;
-    width: 97%;
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    margin-top: 0.3rem;
-  }
-
-  .post-meal-time,
-  .post-weight {
-    text-align: center;
-    width: 50%;
-    margin: 0.5rem 0;
-  }
-
-  .post-text {
-    white-space: pre-line;
-    width: 90%;
   }
 }
 
 /* ---------------------------------------------- */
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  html {
-    height: 100%;
-  }
-
-  body {
-    background-color: var(--white);
-    margin: 0;
-    height: 100vh;
-    max-height: 100%;
-  }
-
-  header {
-    background-color: var(--dark-accent);
-    color: var(--black);
-    display: flex;
-    position: fixed;
+  .posts-header {
     justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    padding: 0.3rem;
-    font-size: 1rem;
-    width: 100%;
-    z-index: 4;
   }
 
   section {
@@ -382,14 +387,22 @@
     padding: 0.3rem 0.5rem;
   }
 
-  .no-post {
-    background-color: var(--light-accent);
+  .post-bar-toggle-btn {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    border-radius: 20px;
+    top: -2.2rem;
+    right: -12rem;
+    z-index: 2;
+    font-size: 1.2rem;
+  }
+
+  .post-photo {
+    width: 96%;
+    max-width: 25rem;
+    max-height: 22rem;
+  }
+
+  .post-sub {
+    width: 97%;
   }
 
   .side-nav-toggle-btn {
@@ -400,7 +413,7 @@
     right: 1.3rem;
   }
 
-  nav {
+  .nav-side {
     position: fixed;
     z-index: 4;
     flex-direction: column;
@@ -410,7 +423,7 @@
     height: 100%;
   }
 
-  .nav-lists {
+  .nav-lists-side {
     display: none;
     margin: 0;
     height: 100%;
@@ -421,7 +434,7 @@
     align-items: center;
   }
 
-  .nav-list {
+  .nav-list-side {
     display: flex;
     list-style: none;
     height: 5%;
@@ -429,7 +442,7 @@
     align-items: center;
   }
 
-  .nav-list > a {
+  .nav-list-side > a {
     display: flex;
     text-decoration: none;
     color: var(--grey);
@@ -438,200 +451,46 @@
     padding: 0.5rem;
   }
 
-  .nav-lists.active,
+  .nav-lists-side.active,
   .nav-link.active {
     display: flex;
   }
 
-  .nav-list > a:hover {
+  .nav-list-side > a:hover {
     text-decoration: underline var(--dark-accent);
   }
 
-  .nav-list > a > i {
+  .nav-list-side > a > i {
     display: none;
   }
 
-  .posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .side-nav-toggle-btn {
+    position: fixed;
+    font-size: 1.5rem;
+    z-index: 5;
+    top: 0.9rem;
+    right: 1.3rem;
   }
 
-  .post-date-board {
-    background-color: var(--dark-accent);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 0.7rem 0;
-  }
-
-  .post {
-    background-color: var(--white);
-    border-radius: 10px;
-    width: 97%;
-    margin-bottom: 0.5rem;
-    padding-top: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .post-date {
-    margin: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .post-meal-type {
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    width: 97%;
-    text-align: center;
-    margin: 0.3rem 0;
-    padding: 0.3rem 0;
-    font-size: 1.3rem;
-    display: inline;
-    position: relative;
-    z-index: 1;
-  }
-
-  .toggle-div {
-    display: flex;
-  }
-
-  .post-bar-toggle {
-    position: relative;
-    display: inline-block;
-  }
-
-  .post-bar-toggle-btn {
-    position: absolute;
-    top: -2.2rem;
-    right: -12rem;
-    z-index: 2;
-    font-size: 1.2rem;
-  }
-
-  .post-bar-list {
+  .side-new-post-btn {
     display: none;
-    position: absolute;
-    background-color: var(--white);
-    min-width: 2rem;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px var(--grey);
-    right: 100%;
-    top: 0;
-    margin: -0.5rem -11rem 0 0;
-    z-index: 1;
-    border-radius: 5px;
-  }
-
-  .post-bar-list.active {
-    display: block;
-  }
-
-  .post-edit-btn,
-  .post-delete-btn {
-    color: var(--black);
-    padding: 0;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .post.edit-btn .delete-form {
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    outline: inherit;
-  }
-
-  .post-delete-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    text-decoration: none;
-    display: block;
-  }
-
-  .post-photo {
-    width: 96%;
-    max-width: 25rem;
-    max-height: 22rem;
-    border-radius: 10px;
-    display: block;
-    padding: 0.2rem 0;
-  }
-
-  .post-sub {
-    display: flex;
-    width: 97%;
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    margin-top: 0.3rem;
-  }
-
-  .post-meal-time,
-  .post-weight {
-    text-align: center;
-    width: 50%;
-    margin: 0.5rem 0;
-  }
-
-  .post-text {
-    white-space: pre-line;
-    width: 90%;
   }
 }
 
 /* ---------------------------------------------- */
 
 @media (min-width: 481px) and (max-width: 768px) {
-  html {
-    height: 100%;
-  }
-
-  body {
-    background-color: var(--white);
-    margin: 0;
-    height: 100vh;
-    max-height: 100%;
-  }
-
-  header {
-    background-color: var(--dark-accent);
-    color: var(--black);
-    display: flex;
-    position: fixed;
+  .posts-header {
     justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    padding: 0.3rem;
-    font-size: 1rem;
-    width: 100%;
-    z-index: 4;
   }
 
-  section {
-    padding: 2.7rem 0 5rem 0;
+  .posts {
+    padding: 5rem 0 6rem 0;
   }
 
   section.post-profile {
     display: none;
-  }
-
-  nav {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    z-index: 4;
   }
 
   h1 {
@@ -639,17 +498,38 @@
     padding: 0.3rem 0.5rem;
   }
 
-  .no-post {
-    background-color: var(--light-accent);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    border-radius: 20px;
+  .post-bar-toggle-btn {
+    top: -2.2rem;
+    right: -12rem;
+    font-size: 1.2rem;
   }
 
-  .nav-lists {
+  .post-photo {
+    width: 95%;
+    max-width: 24rem;
+    max-height: 21rem;
+  }
+
+  .post-sub {
+    width: 96%;
+  }
+
+  .side-new-post-btn {
+    display: none;
+  }
+
+  .side-nav-toggle-btn {
+    display: none;
+  }
+
+  .nav-bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+  }
+
+  .nav-lists-bottom {
     width: 100%;
     margin: 0;
     padding: 0.5rem 0;
@@ -658,206 +538,40 @@
     box-shadow: 0px 0px 13px var(--grey);
   }
 
-  .nav-list {
+  .nav-list-bottom {
     width: 24%;
     display: inline-block;
-    list-style: none;
   }
 
-  .nav-list > a {
+  .nav-list-bottom > a {
     display: block;
     margin: 0.5rem 0.5rem;
     text-align: center;
     text-decoration: none;
     color: var(--grey);
-    font-size: 1.1rem;
-  }
-
-  .nav-list > a > i {
-    display: block;
-  }
-
-  .posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .post-date-board {
-    background-color: var(--dark-accent);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 0.7rem 0;
-  }
-
-  .post {
-    background-color: var(--white);
-    border-radius: 10px;
-    width: 97%;
-    margin-bottom: 0.5rem;
-    padding-top: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .post-date {
-    margin: 0.5rem;
-    font-size: 1.2rem;
-  }
-
-  .post-meal-type {
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    width: 97%;
-    text-align: center;
-    margin: 0.3rem 0;
-    padding: 0.3rem 0;
-    font-size: 1.3rem;
-    display: inline;
-    position: relative;
-    z-index: 1;
-  }
-
-  .toggle-div {
-    display: flex;
-  }
-
-  .post-bar-toggle {
-    position: relative;
-    display: inline-block;
-  }
-
-  .post-bar-toggle-btn {
-    position: absolute;
-    top: -2.2rem;
-    right: -12rem;
-    z-index: 2;
-    font-size: 1.2rem;
-  }
-
-  .post-bar-list {
-    display: none;
-    position: absolute;
-    background-color: var(--white);
-    min-width: 2rem;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px var(--grey);
-    right: 100%;
-    top: 0;
-    margin: -0.5rem -11rem 0 0;
-    z-index: 1;
-    border-radius: 5px;
-  }
-
-  .post-bar-list.active {
-    display: block;
-  }
-
-  .post-edit-btn,
-  .post-delete-btn {
-    color: var(--black);
-    padding: 0;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
     font-size: 1rem;
   }
 
-  .post.edit-btn .delete-form {
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    outline: inherit;
-  }
-
-  .post-delete-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    text-decoration: none;
+  .nav-list-bottom > a > i {
     display: block;
-  }
-
-  .post-photo {
-    width: 96%;
-    max-width: 25rem;
-    max-height: 22rem;
-    border-radius: 10px;
-    display: block;
-    padding: 0.2rem 0;
-  }
-
-  .post-sub {
-    display: flex;
-    width: 97%;
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    margin-top: 0.3rem;
-  }
-
-  .post-meal-time,
-  .post-weight {
-    text-align: center;
-    width: 50%;
-    margin: 0.5rem 0;
-  }
-
-  .post-text {
-    white-space: pre-line;
-    width: 90%;
   }
 }
 
 /* ---------------------------------------------- */
 
 @media (max-width: 480px) {
-  html {
-    height: 100%;
-  }
-
-  body {
-    background-color: var(--white);
-    margin: 0;
-    height: 100vh;
-    max-height: 100%;
-  }
-
-  header {
-    background-color: var(--dark-accent);
-    color: var(--black);
-    display: flex;
-    position: fixed;
+  .posts-header {
     justify-content: center;
     text-align: center;
-    margin: 0 auto;
-    padding: 0.3rem;
     font-size: 0.7rem;
-    width: 100%;
-    z-index: 4;
   }
 
-  section {
-    padding: 2rem 0 3.5rem 0;
+  section.posts {
+    padding: 4rem 0 3.5rem 0;
   }
 
   section.post-profile {
     display: none;
-  }
-
-  nav {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    z-index: 4;
   }
 
   h1 {
@@ -865,17 +579,22 @@
     padding: 0.3rem 0.5rem;
   }
 
-  .no-post {
-    background-color: var(--light-accent);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1rem;
-    border-radius: 20px;
+  .side-new-post-btn {
+    display: none;
   }
 
-  .nav-lists {
+  .side-nav-toggle-btn {
+    display: none;
+  }
+
+  .nav-bottom {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 4;
+  }
+
+  .nav-lists-bottom {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -884,13 +603,13 @@
     box-shadow: 0px 0px 13px var(--grey);
   }
 
-  .nav-list {
+  .nav-list-bottom {
     width: 24%;
     display: inline-block;
     list-style: none;
   }
 
-  .nav-list > a {
+  .nav-list-bottom > a {
     display: block;
     margin: 0.5rem 0.5rem;
     text-align: center;
@@ -899,136 +618,33 @@
     font-size: 0.85rem;
   }
 
-  .nav-list > a > i {
+  .nav-list-bottom > a > i {
     display: block;
   }
 
-  .posts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .post-date-board {
-    background-color: var(--dark-accent);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 0.7rem 0;
-  }
-
-  .post {
-    background-color: var(--white);
-    border-radius: 10px;
-    width: 97%;
-    margin-bottom: 0.5rem;
-    padding-top: 0.2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  .post-date {
-    margin: 0.5rem;
-    font-size: 1.2rem;
-  }
-
   .post-meal-type {
-    background-color: var(--mid-accent);
-    border-radius: 10px;
     width: 96%;
-    text-align: center;
-    margin: 0.3rem 0;
-    padding: 0.3rem 0;
-    font-size: 1.3rem;
-    display: inline;
-    position: relative;
-    z-index: 1;
-  }
-
-  .toggle-div {
-    display: flex;
-  }
-
-  .post-bar-toggle {
-    position: relative;
-    display: inline-block;
   }
 
   .post-bar-toggle-btn {
-    position: absolute;
     top: 50%;
     right: 0.5rem;
     transform: translate(140px, -137%);
     font-size: 1.2rem;
-    z-index: 2;
   }
 
   .post-bar-list {
-    display: none;
-    position: absolute;
-    background-color: var(--white);
-    min-width: 2rem;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px var(--grey);
-    right: 100%;
-    top: 0;
     margin: -0.5rem -10rem 0 0;
-    z-index: 1;
-    border-radius: 5px;
-  }
-
-  .post-bar-list.active {
-    display: block;
-  }
-
-  .post-edit-btn,
-  .post-delete-btn {
-    color: var(--black);
-    padding: 0;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-size: 1rem;
-  }
-
-  .post.edit-btn .delete-form {
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    outline: inherit;
-  }
-
-  .post-delete-btn {
-    cursor: pointer;
-    background: none;
-    border: none;
-    text-decoration: none;
-    display: block;
   }
 
   .post-photo {
     width: 95%;
     max-width: 24rem;
     max-height: 21rem;
-    border-radius: 10px;
-    display: block;
-    padding: 0.2rem 0;
   }
 
   .post-sub {
-    display: flex;
     width: 96%;
-    background-color: var(--mid-accent);
-    border-radius: 10px;
-    margin-top: 0.3rem;
   }
 
   .post-meal-time,
@@ -1036,10 +652,5 @@
     text-align: center;
     width: 50%;
     margin: 0.5rem 0;
-  }
-
-  .post-text {
-    white-space: pre-line;
-    width: 90%;
   }
 }

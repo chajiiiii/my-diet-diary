@@ -18,8 +18,11 @@
   background-color: var(--light-accent);
 }
 
-.sub-header {
+.new-post-page {
+  text-align: center;
   position: relative;
+  top: 10%;
+  text-decoration: underline var(--dark-accent);
 }
 
 .new-post-form {
@@ -28,7 +31,6 @@
   align-items: center;
   flex-direction: column;
   margin: 4rem auto;
-  background-color: var(--light-accent);
   height: 50%;
   width: 50%;
 }
@@ -45,12 +47,19 @@
   background-color: var(--white);
 }
 
+.my-profile {
+  text-align: center;
+  position: relative;
+  top: 10%;
+  text-decoration: underline var(--dark-accent);
+}
+
 .profile {
   background-color: var(--white);
   border: solid 5px var(--dark-accent);
   border-radius: 10px;
   width: 17rem;
-  margin: 3rem auto;
+  margin: 10rem auto 3rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
