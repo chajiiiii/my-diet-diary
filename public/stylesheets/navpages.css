@@ -1,0 +1,110 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --light-accent: #fcf6bd;
+  --mid-accent: #ffee93;
+  --dark-accent: #ffdc5e;
+  --green: #a9e1ba;
+  --light-green: #d6eadf;
+  --blue: #b6ccfe;
+  --light-blue: #dfe7fd;
+  --yellow: #ffee93;
+  --light-yellow: #fcf6bd;
+  --dark-yellow: #ffdc5e;
+  --grey: #969696;
+}
+
+.new-post-body-tag {
+  background-color: var(--light-accent);
+}
+
+.sub-header {
+  position: relative;
+}
+
+.new-post-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 4rem auto;
+  background-color: var(--light-accent);
+  height: 50%;
+  width: 50%;
+}
+
+.btn-warning {
+  background-color: var(--dark-accent);
+  border: solid 1px var(--dark-accent);
+  margin: 1rem;
+}
+
+/* ------------------ Profile Page ------------------*/
+
+.profile-body-tag {
+  background-color: var(--white);
+}
+
+.profile {
+  background-color: var(--white);
+  border: solid 5px var(--dark-accent);
+  border-radius: 10px;
+  width: 17rem;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img > img {
+  min-width: 150px;
+  max-width: 240px;
+  min-height: 150px;
+  max-height: 150px;
+  border: solid 5px var(--white);
+  border-radius: 10px;
+  margin: 1rem 1rem 0.3rem 1rem;
+}
+
+.profile-name {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: 1.5px;
+}
+
+.profile-name > p {
+  margin: 0;
+  text-align: center;
+}
+
+.profile-bio {
+  background-color: var(--white);
+  border: solid 3px var(--dark-accent);
+  border-radius: 10px;
+  width: 240px;
+  text-align: center;
+  padding: 3rem 0;
+  margin: 0.6rem 0;
+}
+
+.profile-bio > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.profile-edit-btn {
+  background-color: var(--light-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17rem;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: var(--black);
+}

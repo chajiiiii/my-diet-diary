@@ -23,7 +23,7 @@
     height: 100%;
   }
 
-  body {
+  .posts-body-tag {
     background-color: var(--white);
     max-height: 100%;
   }

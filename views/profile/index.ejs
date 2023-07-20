@@ -1,11 +1,24 @@
 <%- include("../partials/header") %>
 
-<h2>User Profile</h2>
-<h2>Welcome <%= profile.userName %></h2>
+<div class="profile">
+  <div class="profile-img">
+    <img src="<%= profile.avatar %>" alt="Profile Avatar" />
+  </div>
 
-<p>Username: <%= profile.userName %></p>
-<p>Avatar: <img src="<%= profile.avatar %>" alt="Profile Avatar" /></p>
-<p>Bio <%= profile.bio %></p>
-<a href="/profile/<%= profile.id %>/edit">Edit Profile</a>
+  <div class="profile-name">
+    <p><%= profile.userName %></p>
+  </div>
+
+  <div class="profile-bio">
+    <% if(profile.bio) { %>
+    <p><%= profile.bio %></p>
+    <% } else { %>
+    <p>Bio Empty</p>
+    <% } %>
+  </div>
+</div>
+<a href="/profile/<%= profile.id %>/edit" class="profile-edit-btn"
+  >Edit Profile</a
+>
 
 <%- include("../partials/footer") %>
