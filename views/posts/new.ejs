@@ -1,38 +1,57 @@
 <%- include("../partials/header") %>
 
-<form action="/posts" method="POST">
-  <label>Meal Date <input type="date" name="mealDate" /></label>
-  <label>
-    Meal Type
-    <select name="mealType">
+<form action="/posts" method="POST" class="new-post-form">
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Meal Date</span
+    ><input type="date" name="mealDate" class="form-control" />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Meal Type</span>
+    <select name="mealType" class="form-select">
       <option value="Breakfast">Breakfast</option>
       <option value="Lunch">Lunch</option>
       <option value="Dinner">Dinner</option>
       <option value="Snack">Snack</option>
     </select>
-  </label>
-  <label>
-    Meal Time
-    <input type="time" name="mealTime" />
-  </label>
-  <label
-    >Weight
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Meal Time</span>
+    <input type="time" name="mealTime" class="form-control" />
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Weight</span>
     <input
       type="number"
       name="weight"
+      class="form-control"
       step="0.1"
       min="0"
       max="999.9"
       pattern="\d+(\.\d{0,1})?"
       placeholder="up to first decimal in kg"
     />
-  </label>
-  <label
-    >Image URL:
-    <input type="text" name="photo" />
-  </label>
-  <textarea name="text"></textarea>
-  <button type="submit">Post</button>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon3">Image URL</span>
+    <input
+      type="text"
+      name="photo"
+      class="form-control"
+      id="basic-url"
+      placeholder="Ex. https://example.com/users/"
+    />
+  </div>
+
+  <div class="input-group">
+    <span class="input-group-text">Text</span>
+    <textarea name="text" class="form-control"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-warning">Post</button>
 </form>
 
 <%- include("../partials/footer") %>

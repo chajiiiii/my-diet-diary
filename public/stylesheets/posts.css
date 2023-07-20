@@ -352,7 +352,7 @@
 
 /* ---------------------------------------------- */
 
-@media (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   html {
     height: 100%;
   }
@@ -602,7 +602,7 @@
 
 /* ---------------------------------------------- */
 
-@media (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
   html {
     height: 100%;
   }
@@ -629,7 +629,7 @@
   }
 
   section {
-    padding: 4.7rem 0;
+    padding: 2.7rem 0 5rem 0;
   }
 
   section.post-profile {
@@ -855,7 +855,7 @@
   }
 
   section {
-    padding: 3.5rem 0;
+    padding: 2rem 0 3.5rem 0;
   }
 
   section.post-profile {
