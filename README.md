@@ -25,6 +25,8 @@ My Diet Diary is a simple diet tracking web application where users can record a
 
 ## Getting Started
 
+Trello Link: https://trello.com/b/MiPZmsW8/project-2-my-diet-diary
+
 1. Clone this repository to your local machine.
 2. Install the required dependencies using npm install.
 3. Set up a MongoDB database and provide the connection URL in the appropriate configuration file.
