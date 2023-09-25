@@ -73,7 +73,7 @@ async function create(req, res) {
   try {
     const userProfileId = req.user._id;
     let profile = await Profile.findOne({ user: userProfileId });
-    console.log(`User profile!!! ${profile}`);
+    // console.log(`User profile!!! ${profile}`);
 
     await Post.create({
       mealDate: req.body.mealDate,
